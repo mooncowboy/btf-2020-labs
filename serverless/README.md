@@ -26,10 +26,24 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 
 **TBD:** Add CloudLabs link here
 
+## Access your cloud shell
+
+Follow instructions in [../cloudshell.md](../cloudshell.md)
+
 ## Provision requirements
 
-**TBD: **If needed, this should be a script
+**TBD:** Remove if not needed
 
+In your cloud shell, run the following:
+
+```
+rgName=$(az group list --query [0].name -o tsv)
+
+az group deployment create --template-file https://raw.githubusercontent.com/shoegazerpt/btf-2020-labs/master/serverless/deploy/azureDeploy.json --parameters '{
+    "rgName": { "value": "$rgName" }
+}'
+
+```
 ## Lab steps
 
 1. Do something
