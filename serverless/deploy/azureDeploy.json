@@ -3,8 +3,9 @@
     "contentVersion": "1.0.0.0",
     "parameters": {},
     "variables": {
-        "storageAccount": "[concat(resourceGroup().name, '-storage')]",
-        "cosmos": "[concat(resourceGroup().name, '-cosmos')]"
+        "safeRgName": "[uniqueString(resourceGroup().name)]",
+        "storageAccount": "[concat(variables('safeRgName'), 'storage')]",
+        "cosmos": "[concat(variables('safeRgName'), 'cosmos')]"
     },
     "resources": [
         {
@@ -21,7 +22,7 @@
         },
         {
             "apiVersion": "2017-05-10",
-            "name": "linkedTemplate",
+            "name": "cosmos",
             "type": "Microsoft.Resources/deployments",
             "properties": {
                 "mode": "Incremental",
@@ -36,7 +37,7 @@
         },
         {
             "apiVersion": "2017-05-10",
-            "name": "linkedTemplate",
+            "name": "eventGrid",
             "type": "Microsoft.Resources/deployments",
             "properties": {
                 "mode": "Incremental",
