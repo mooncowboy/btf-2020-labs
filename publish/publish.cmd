@@ -1,0 +1,1 @@
+pandoc -o site.html ..\README.md ..\cloudshell.md --lua-filter=links-to-html.lua
