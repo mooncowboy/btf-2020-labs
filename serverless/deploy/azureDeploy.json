@@ -3,8 +3,8 @@
     "contentVersion": "1.0.0.0",
     "parameters": {},
     "variables": {
-        "storageAccount": "[newGuid()]",
-        "functionApp": "[newGuid()]"
+        "storageAccount": "[concat(resourceGroup().name, '-storage')]",
+        "cosmos": "[concat(resourceGroup().name, '-cosmos')]"
     },
     "resources": [
         {
@@ -45,7 +45,7 @@
                   "contentVersion":"1.0.0.0"
                 },
                 "parameters": {
-                    
+
                 }
             }
         }

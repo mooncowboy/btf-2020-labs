@@ -39,7 +39,9 @@ In your cloud shell, run the following:
 ```
 rgName=$(az group list --query [0].name -o tsv)
 
-az group deployment create --template-file https://raw.githubusercontent.com/shoegazerpt/btf-2020-labs/master/serverless/deploy/azureDeploy.json --parameters '{
+templateFile=https://raw.githubusercontent.com/shoegazerpt/btf-2020-labs/master/serverless/deploy/azureDeploy.json?token=AAQBUGT3TWA4CEEOFZKCJEC6BNRD4
+
+az group deployment create -g $rgName --template-file $templateFile --parameters '{
     "rgName": { "value": "$rgName" }
 }'
 
