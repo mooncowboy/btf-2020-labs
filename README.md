@@ -19,4 +19,4 @@
 
 # LICENSE
 
-[LICENSE](license)
+[LICENSE](LICENSE)
