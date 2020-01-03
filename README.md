@@ -2,6 +2,7 @@
 
 * [Available LABs](#available-labs)
 * [LAB structure](#lab-structure)
+* [License](#license)
 
 # Available LABs
 
@@ -15,3 +16,7 @@
 * 5m topic overview
 * 5m CloudLabs guidance
 * 60m LAB
+
+# LICENSE
+
+[LICENSE](license)
