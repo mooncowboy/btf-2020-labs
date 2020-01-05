@@ -1,0 +1,132 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "cosmosDbName": {
+           "type": "string",
+           "metadata": {
+                "description": "description"
+            }
+        }
+    },
+    "variables": {
+        "accountName": "[parameters('cosmosDbName')]",
+        "databaseName": "LicensePlates",
+        "fullDatabaseName": "[concat(variables('accountName'), '/sql/', variables('databaseName'))]",
+        "containerName1": "Processed",
+        "fullContainerName1": "[concat(variables('fullDatabaseName'), '/', variables('containerName1'))]",
+        "containerName2": "NeedsManualReview",
+        "fullContainerName2": "[concat(variables('fullDatabaseName'), '/', variables('containerName2'))]",
+        "accountResourceId": "[resourceId('Microsoft.DocumentDB/databaseAccounts', variables('accountName'))]",
+        "accountApiVersion": "[providers('Microsoft.DocumentDB', 'databaseAccounts').apiVersions[0]]"
+    },
+    "resources": [
+        {
+			"type": "Microsoft.DocumentDB/databaseAccounts",
+			"name": "[variables('accountName')]",
+			"apiVersion": "2019-08-01",
+			"kind": "GlobalDocumentDB",
+			"location": "[resourceGroup().location]",
+            "properties": {
+                "databaseAccountOfferType": "Standard",
+                "locations": [
+                    {
+                        "id": "[concat(variables('accountName'), '-', resourceGroup().location)]",
+                        "failoverPriority": 0,
+                        "locationName": "[resourceGroup().location]"
+                    }
+                ],
+                "enableMultipleWriteLocations": false,
+                "isVirtualNetworkFilterEnabled": false,
+                "virtualNetworkRules": [],
+                "ipRangeFilter": "",
+                "dependsOn": [],
+                "capabilities": []
+            }
+		},
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts/apis/databases",
+            "name": "[variables('fullDatabaseName')]",
+                "apiVersion": "2016-03-31",
+                "dependsOn": [ "[resourceId('Microsoft.DocumentDB/databaseAccounts/', variables('accountName'))]" ],
+                "properties":{
+                    "resource":{
+                        "id": "[variables('databaseName')]"
+                    },
+                    "options":{
+                        "throughput": 5000
+                    }
+                }
+        },
+        {
+            "type": "Microsoft.DocumentDb/databaseAccounts/apis/databases/containers",
+            "name": "[variables('fullContainerName1')]",
+            "apiVersion": "2016-03-31",
+            "dependsOn": [ "[resourceId('Microsoft.DocumentDB/databaseAccounts/apis/databases', variables('accountName'), 'sql', variables('databaseName'))]" ],
+            "properties":{
+            "resource":{
+                    "id":  "[variables('containerName1')]",
+                    "partitionKey": {
+                        "paths": [
+                            "/licensePlateText"
+                        ],
+                        "kind": "hash"
+                    },
+                    "indexingPolicy": {
+                        "indexingMode": "consistent",
+                        "includedPaths": [{
+                            "path": "/*",
+                            "indexes": [
+                                {
+                                    "kind": "Hash",
+                                    "dataType": "String",
+                                    "precision": -1
+                            }
+                        ]
+                    }]
+                }
+            }
+            }
+        },
+        {
+            "type": "Microsoft.DocumentDb/databaseAccounts/apis/databases/containers",
+            "name": "[variables('fullContainerName2')]",
+            "apiVersion": "2016-03-31",
+            "dependsOn": [ "[resourceId('Microsoft.DocumentDB/databaseAccounts/apis/databases', variables('accountName'), 'sql', variables('databaseName'))]" ],
+            "properties":{
+            "resource":{
+                    "id":  "[variables('containerName2')]",
+                    "partitionKey": {
+                        "paths": [
+                            "/fileName"
+                        ],
+                        "kind": "hash"
+                    },
+                    "indexingPolicy": {
+                        "indexingMode": "consistent",
+                        "includedPaths": [{
+                            "path": "/*",
+                            "indexes": [
+                                {
+                                    "kind": "Hash",
+                                    "dataType": "String",
+                                    "precision": -1
+                            }
+                        ]
+                    }]
+                }
+            }
+        }
+        }
+    ],
+    "outputs": {
+        "cosmosUri": {
+           "type": "string",
+           "value": "[reference(variables('accountResourceId'), variables('accountApiVersion')).documentEndpoint]"
+        },
+        "cosmosPrimaryKey": {
+           "type": "string",
+           "value": "[listKeys(variables('accountResourceId'), variables('accountApiVersion')).primaryMasterKey]"
+        }
+    }
+}

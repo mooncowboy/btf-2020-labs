@@ -41,9 +41,7 @@ rgName=$(az group list --query [0].name -o tsv)
 
 templateFile=https://raw.githubusercontent.com/shoegazerpt/btf-2020-labs/master/serverless/deploy/azureDeploy.json?token=AAQBUGT3TWA4CEEOFZKCJEC6BNRD4
 
-az group deployment create -g $rgName --template-file $templateFile --parameters '{
-    "rgName": { "value": "$rgName" }
-}'
+az group deployment create -g $rgName --template-file $templateFile
 
 ```
 ## Lab steps

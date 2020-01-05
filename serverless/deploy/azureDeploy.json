@@ -5,7 +5,9 @@
     "variables": {
         "safeRgName": "[uniqueString(resourceGroup().name)]",
         "storageAccount": "[concat(variables('safeRgName'), 'storage')]",
-        "cosmos": "[concat(variables('safeRgName'), 'cosmos')]"
+        "cosmosDbName": "[concat(variables('safeRgName'), 'cosmos')]",
+        "eventGridTopicName": "[concat(variables('safeRgName'), 'eventGrid')]",
+        "cosmosUri": "https://btf2020labs.blob.core.windows.net/labs/serverless/deploy/cosmos.json"
     },
     "resources": [
         {
@@ -27,29 +29,21 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                  "uri":"https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-cosmosdb-sql/azuredeploy.json",
+                  "uri":"[variables('cosmosUri')]",
                   "contentVersion":"1.0.0.0"
                 },
                 "parameters": {
-                    
+                    "cosmosDbName": { "value": "[variables('cosmosDbName')]"}
                 }
             }
         },
         {
-            "apiVersion": "2017-05-10",
-            "name": "eventGrid",
-            "type": "Microsoft.Resources/deployments",
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                  "uri":"https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-event-grid/azuredeploy.json",
-                  "contentVersion":"1.0.0.0"
-                },
-                "parameters": {
-
-                }
-            }
+            "name": "[variables('eventGridTopicName')]",
+            "type": "Microsoft.EventGrid/topics",
+            "location": "[resourceGroup().location]",
+            "apiVersion": "2018-01-01"
         }
+        
     ],
     "outputs": {}
 }
