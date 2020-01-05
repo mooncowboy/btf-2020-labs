@@ -7,6 +7,7 @@
         "storageAccount": "[concat(variables('safeRgName'), 'storage')]",
         "cosmosDbName": "[concat(variables('safeRgName'), 'cosmos')]",
         "eventGridTopicName": "[concat(variables('safeRgName'), 'eventGrid')]",
+        "computerVisionName": "[concat(variables('safeRgName'), 'vision')]",
         "cosmosUri": "https://btf2020labs.blob.core.windows.net/labs/serverless/deploy/cosmos.json"
     },
     "resources": [
@@ -42,7 +43,18 @@
             "type": "Microsoft.EventGrid/topics",
             "location": "[resourceGroup().location]",
             "apiVersion": "2018-01-01"
-        }
+        },
+        {
+          "type": "Microsoft.CognitiveServices/accounts",
+          "apiVersion": "2017-04-18",
+          "name": "[variables('computerVisionName')]",
+          "location": "[resourceGroup().location]",
+          "kind": "ComputerVision",
+          "sku": {
+              "name": "S1"
+          },
+          "properties": {}
+      }
         
     ],
     "outputs": {}
