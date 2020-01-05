@@ -8,6 +8,11 @@
         "cosmosDbName": "[concat(variables('safeRgName'), 'cosmos')]",
         "eventGridTopicName": "[concat(variables('safeRgName'), 'eventGrid')]",
         "computerVisionName": "[concat(variables('safeRgName'), 'vision')]",
+        "functionHostingPlanName": "[concat(variables('safeRgName'), 'plan')]",
+        "functionTollBoothName": "[concat(variables('safeRgName'), '-TollBoothFunctionApp')]",
+        "functionEventsName": "[concat(variables('safeRgName'), '-TollBoothEvents')]",
+        "keyVaultName": "[concat(variables('safeRgName'), '-vault')]",
+        
         "cosmosUri": "https://btf2020labs.blob.core.windows.net/labs/serverless/deploy/cosmos.json"
     },
     "resources": [
@@ -54,8 +59,93 @@
               "name": "S1"
           },
           "properties": {}
-      }
+      },
+      {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2018-02-01",
+            "name": "[variables('functionTollBoothName')]",
+            "kind": "functionapp,linux",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', variables('functionHostingPlanName'))]"
+            ],
+            "properties": {
+                "name": "[variables('functionTollBoothName')]",
+                "siteConfig": {
+                     "appSettings": [
+                        {
+                            "name": "FUNCTIONS_WORKER_RUNTIME",
+                            "value": "dotnet"
+                        },
+                        {
+                            "name": "FUNCTIONS_EXTENSION_VERSION",
+                            "value": "~2"
+                        }
+                    ]
+                },
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('functionHostingPlanName'))]",
+                "clientAffinityEnabled": false
+            }
+        },
+      {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2018-02-01",
+            "name": "[variables('functionEventsName')]",
+            "kind": "functionapp,linux",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', variables('functionHostingPlanName'))]"
+            ],
+            "properties": {
+                "name": "[variables('functionEventsName')]",
+                "siteConfig": {
+                     "appSettings": [
+                        {
+                            "name": "FUNCTIONS_WORKER_RUNTIME",
+                            "value": "node"
+                        },
+                        {
+                            "name": "FUNCTIONS_EXTENSION_VERSION",
+                            "value": "~2"
+                        }
+                    ]
+                },
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('functionHostingPlanName'))]",
+                "clientAffinityEnabled": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2018-02-01",
+            "name": "[variables('functionHostingPlanName')]",
+            "location": "[resourceGroup().location]",
+            "kind": "linux",
+            "properties":{
+                "reserved": false
+            },
+            "sku": {
+                "Tier": "Dynamic",
+                "Name": "Y1"
+            }
+        }
         
     ],
-    "outputs": {}
+    "outputs": {
+        "computerVisionApiKey": {
+           "type": "string",
+           "value": "myval"
+        },
+        "eventGridTopicKey": {
+           "type": "string",
+           "value": "myval2"
+        },
+        "cosmosDBAuthorizationKey": {
+           "type": "string",
+           "value": "myval"
+        },
+        "blobStorageConnection": {
+           "type": "string",
+           "value": "myval"
+        }
+    }
 }

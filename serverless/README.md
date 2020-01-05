@@ -38,6 +38,7 @@ In your cloud shell, run the following:
 
 ```
 rgName=$(az group list --query [0].name -o tsv)
+tenantId=$(az account show --query tenantId -o tsv)
 
 templateFile=https://raw.githubusercontent.com/shoegazerpt/btf-2020-labs/master/serverless/deploy/azureDeploy.json?token=AAQBUGT3TWA4CEEOFZKCJEC6BNRD4
 
