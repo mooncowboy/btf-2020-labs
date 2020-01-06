@@ -26,6 +26,7 @@
         "functionEventsName": "[concat(variables('safeRgName'), '-TollBoothEvents')]",
         "keyVaultName": "[concat(variables('safeRgName'), '-vault')]",
         
+        
         "cosmosUri": "https://btf2020labs.blob.core.windows.net/labs/serverless/deploy/cosmos.json"
     },
     "resources": [
@@ -45,7 +46,7 @@
             "apiVersion": "2017-05-10",
             "name": "cosmos",
             "type": "Microsoft.Resources/deployments",
-            "condition": "[equals(1,0)]",
+            "condition": "[equals(1,1)]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -97,7 +98,48 @@
                         {
                             "name": "FUNCTIONS_EXTENSION_VERSION",
                             "value": "~2"
+                        },
+                        {
+                            "name": "computerVisionApiUrl",
+                            "value": "[concat('https://', variables('computerVisionName'), '.cognitiveservices.azure.com/vision/v2.0/ocr')]"
+                        },
+                        {
+                            "name": "computerVisionApiKey",
+                            "value": "[concat('@Microsoft.KeyVault(SecretUri=', reference(resourceId('Microsoft.KeyVault/vaults/secrets', variables('keyVaultName'), 'computerVisionApiKey')).secretUriWithVersion, ')')]"
+                        },
+                        {
+                            "name": "eventGridTopicEndpoint",
+                            "value": "[reference(variables('eventGridTopicName')).endpoint]"
+                        },
+                        {
+                            "name": "eventGridTopicKey",
+                            "value": "[concat('@Microsoft.KeyVault(SecretUri=', reference(resourceId('Microsoft.KeyVault/vaults/secrets', variables('keyVaultName'), 'eventGridTopicKey')).secretUriWithVersion, ')')]"
+                        },
+                        {
+                            "name": "cosmosDBEndPointUrl",
+                            "value": "[reference('cosmos').outputs.cosmosUri.value]"
+                        },
+                        {
+                            "name": "cosmosDBAuthorizationKey",
+                            "value": "[concat('@Microsoft.KeyVault(SecretUri=', reference(resourceId('Microsoft.KeyVault/vaults/secrets', variables('keyVaultName'), 'cosmosDBAuthorizationKey')).secretUriWithVersion, ')')]"
+                        },
+                        {
+                            "name": "cosmosDBDatabaseId",
+                            "value": "LicensePlates"
+                        },
+                        {
+                            "name": "cosmosDBCollectionId",
+                            "value": "Processed"
+                        },
+                        {
+                            "name": "exportCsvContainerName",
+                            "value": "export"
+                        },
+                        {
+                            "name": "blobStorageConnection",
+                            "value": "[concat('@Microsoft.KeyVault(SecretUri=', reference(resourceId('Microsoft.KeyVault/vaults/secrets', variables('keyVaultName'), 'blobStorageConnection')).secretUriWithVersion, ')')]"
                         }
+                        
                     ]
                 },
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('functionHostingPlanName'))]",
@@ -137,6 +179,7 @@
         {
             "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2018-02-01",
+            "dependsOn": ["[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]" ],
             "name": "[variables('functionHostingPlanName')]",
             "location": "[resourceGroup().location]",
             "kind": "linux",
@@ -156,6 +199,12 @@
             "tags": {
                 "displayName": "[variables('keyVaultName')]"
             },
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccount'))]",
+                "[resourceId('Microsoft.Resources/deployments', 'cosmos')]",
+                "[resourceId('Microsoft.CognitiveServices/accounts', variables('computerVisionName'))]",
+                "[resourceId('Microsoft.EventGrid/topics', variables('eventGridTopicName'))]"
+            ],
             "properties": {
                 "enabledForDeployment": true,
                 "enabledForTemplateDeployment": true,
@@ -224,7 +273,18 @@
                         "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
                     ],
                     "properties": {
-                        "value": "secretValue"
+                        "value": "[listKeys(variables('computerVisionName'), '2017-04-18').key1]"
+                    }
+                },
+                {
+                    "type": "secrets",
+                    "name": "computerVisionEndpoint",
+                    "apiVersion": "2016-10-01",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
+                    ],
+                    "properties": {
+                        "value": "[reference(variables('computerVisionName'), '2017-04-18').endpoint]"
                     }
                 },
                 {
@@ -235,7 +295,7 @@
                         "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
                     ],
                     "properties": {
-                        "value": "secretValue"
+                        "value": "[listKeys(variables('eventGridTopicName'), '2018-01-01').key1]"
                     }
                 },
                 {
@@ -246,7 +306,7 @@
                         "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
                     ],
                     "properties": {
-                        "value": "secretValue"
+                        "value": "[reference('cosmos').outputs.cosmosPrimaryKey.value]"
                     }
                 },
                 {
@@ -257,7 +317,7 @@
                         "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
                     ],
                     "properties": {
-                        "value": "secretValue"
+                        "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccount'),';AccountKey=',concat(listKeys(resourceId('Microsoft.Storage/storageAccounts',variables('storageAccount')),'2015-05-01-preview').key1), ';EndpointSuffix=core.windows.net')]"
                     }
                 }
             ]
