@@ -50,9 +50,9 @@ az group deployment create -g $rgName --template-file $templateFile
 1. [Exercise 2, task 4: Finish the ProcessImage function](https://github.com/microsoft/MCW-Serverless-architecture/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Serverless%20architecture.md#task-4-finish-the-processimage-function)
 2. [Exercise 2, task 5: Publish the Function App from Visual Studio](https://github.com/microsoft/MCW-Serverless-architecture/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Serverless%20architecture.md#task-5-publish-the-function-app-from-visual-studio)
 3. [Exercise 3: Create functions in the portal](https://github.com/microsoft/MCW-Serverless-architecture/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Serverless%20architecture.md#exercise-3-create-functions-in-the-portal) (all tasks)
-4. Exercise 5: Explore your data in Azure Cosmos DB (all tasks)
-5. Exercise 6: Create the data export workflow (all tasks)
-6. Exercise 4: Monitor your functions with Application Insights
+4. [Exercise 5: Explore your data in Azure Cosmos DB](https://github.com/microsoft/MCW-Serverless-architecture/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Serverless%20architecture.md#exercise-5-explore-your-data-in-azure-cosmos-db) (all tasks)
+5. [Exercise 6: Create the data export workflow](https://github.com/microsoft/MCW-Serverless-architecture/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Serverless%20architecture.md#exercise-6-create-the-data-export-workflow) (all tasks)
+6. [Exercise 4: Monitor your functions with Application Insights](https://github.com/microsoft/MCW-Serverless-architecture/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20Serverless%20architecture.md#exercise-4-monitor-your-functions-with-application-insights) (all tasks)
 
 # Recommended next steps
 
