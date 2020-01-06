@@ -1,7 +1,20 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {},
+    "parameters": {
+        "tenantId": {
+           "type": "string",
+           "metadata": {
+                "description": "description"
+            }
+        },
+        "userId": {
+           "type": "string",
+           "metadata": {
+                "description": "description"
+            }
+        }
+    },
     "variables": {
         "safeRgName": "[uniqueString(resourceGroup().name)]",
         "storageAccount": "[concat(variables('safeRgName'), 'storage')]",
@@ -32,6 +45,7 @@
             "apiVersion": "2017-05-10",
             "name": "cosmos",
             "type": "Microsoft.Resources/deployments",
+            "condition": "[equals(1,0)]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -69,6 +83,9 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms', variables('functionHostingPlanName'))]"
             ],
+            "identity": {
+                "type": "SystemAssigned"
+            },
             "properties": {
                 "name": "[variables('functionTollBoothName')]",
                 "siteConfig": {
@@ -96,6 +113,9 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms', variables('functionHostingPlanName'))]"
             ],
+            "identity": {
+                "type": "SystemAssigned"
+            },
             "properties": {
                 "name": "[variables('functionEventsName')]",
                 "siteConfig": {
@@ -127,6 +147,120 @@
                 "Tier": "Dynamic",
                 "Name": "Y1"
             }
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults",
+            "apiVersion": "2018-02-14",
+            "name": "[variables('keyVaultName')]",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "[variables('keyVaultName')]"
+            },
+            "properties": {
+                "enabledForDeployment": true,
+                "enabledForTemplateDeployment": true,
+                "enabledForDiskEncryption": true,
+                "tenantId": "[parameters('tenantId')]",
+                "accessPolicies": [
+                    {
+                        "tenantId": "[parameters('tenantId')]",
+                        "objectId": "[parameters('userId')]",
+                        "permissions": {
+                            "keys": [
+                                "Get",
+                                "List",
+                                "Update"
+                             ],
+                            "secrets": [
+                                "List",
+                                "Get",
+                                "Set"
+                            ]
+                       }
+                    },
+                    {
+                        "tenantId": "[parameters('tenantId')]",
+                        "objectId": "[reference(concat(resourceId('Microsoft.Web/sites/', variables('functionTollBoothName')), '/providers/Microsoft.ManagedIdentity/Identities/default'), '2015-08-31-PREVIEW').principalId]",
+                        "permissions": {
+                            "keys": [
+                                "Get",
+                                "List",
+                                "Update"
+                             ],
+                            "secrets": [
+                                "List",
+                                "Get",
+                                "Set"
+                            ]
+                       }
+                    },
+                    {
+                        "tenantId": "[parameters('tenantId')]",
+                        "objectId": "[reference(concat(resourceId('Microsoft.Web/sites/', variables('functionEventsName')), '/providers/Microsoft.ManagedIdentity/Identities/default'), '2015-08-31-PREVIEW').principalId]",
+                        "permissions": {
+                            "keys": [
+                                "Get",
+                                "List"
+                             ],
+                            "secrets": [
+                                "List",
+                                "Get",
+                                "Set"
+                            ]
+                       }
+                    }
+                ],
+                "sku": {
+                    "name": "standard",
+                    "family": "A"
+                }
+            },
+            "resources": [
+                {
+                    "type": "secrets",
+                    "name": "computerVisionApiKey",
+                    "apiVersion": "2016-10-01",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
+                    ],
+                    "properties": {
+                        "value": "secretValue"
+                    }
+                },
+                {
+                    "type": "secrets",
+                    "name": "eventGridTopicKey",
+                    "apiVersion": "2016-10-01",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
+                    ],
+                    "properties": {
+                        "value": "secretValue"
+                    }
+                },
+                {
+                    "type": "secrets",
+                    "name": "cosmosDBAuthorizationKey",
+                    "apiVersion": "2016-10-01",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
+                    ],
+                    "properties": {
+                        "value": "secretValue"
+                    }
+                },
+                {
+                    "type": "secrets",
+                    "name": "blobStorageConnection",
+                    "apiVersion": "2016-10-01",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
+                    ],
+                    "properties": {
+                        "value": "secretValue"
+                    }
+                }
+            ]
         }
         
     ],
@@ -146,6 +280,14 @@
         "blobStorageConnection": {
            "type": "string",
            "value": "myval"
+        },
+        "functionTollBoothIdentity": {
+            "type": "string",
+            "value": "[reference(concat(resourceId('Microsoft.Web/sites/', variables('functionTollBoothName')), '/providers/Microsoft.ManagedIdentity/Identities/default'), '2015-08-31-PREVIEW').principalId]"
+        },
+        "functionEventsIdentity": {
+            "type": "string",
+            "value": "[reference(concat(resourceId('Microsoft.Web/sites/', variables('functionEventsName')), '/providers/Microsoft.ManagedIdentity/Identities/default'), '2015-08-31-PREVIEW').principalId]"
         }
     }
 }
