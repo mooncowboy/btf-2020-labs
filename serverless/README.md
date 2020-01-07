@@ -36,7 +36,6 @@ In your cloud shell, run the following:
 
 ```
 curl -s https://raw.githubusercontent.com/shoegazerpt/MCW-Serverless-architecture/btf2020/Hands-on%20lab/deploy/deploy.sh | bash -s
-
 ```
 ## Lab steps
 
