@@ -18,9 +18,9 @@
 
 # LAB Structure
 
-* 5m intros
-* 5m topic overview session (MVP)
-* 5m CloudLabs guidance
+* 2m intros
+* 10m topic overview session (MVP)
+* 3m CloudLabs guidance
 * 60m LAB
 
 # LICENSE
