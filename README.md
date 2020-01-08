@@ -19,7 +19,7 @@
 # LAB Structure
 
 * 5m intros
-* 5m topic overview
+* 5m topic overview session (MVP)
 * 5m CloudLabs guidance
 * 60m LAB
 
