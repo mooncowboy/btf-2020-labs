@@ -6,7 +6,7 @@
 
 # Available LABs
 
-* Continuous Delivery with Azure DevOps
+* [Continuous Delivery with Azure DevOps](devops/README.md)
 * Kubernetes with AKS
 * [Serverless Architecture](serverless/README.md)
 * Data Migration

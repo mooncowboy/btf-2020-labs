@@ -1,6 +1,6 @@
-# Serverless Architecture
+# Continuous delivery in Azure DevOps
 
-Selected tasks from [Microsoft Cloud Workshop - Serverless Architecture](https://github.com/microsoft/MCW-Serverless-architecture)
+Selected tasks from [Microsoft Cloud Workshop - Continuous delivery in Azure DevOps](https://github.com/microsoft/MCW-Continuous-delivery-in-Azure-DevOps)
 
 Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 
@@ -36,16 +36,14 @@ In your cloud shell, run the following:
 
 ```
 curl -s https://raw.githubusercontent.com/shoegazerpt/MCW-Serverless-architecture/btf2020/Hands-on%20lab/deploy/deploy.sh | bash -s
-```
-
-It takes about 12 minutes to get the resources fully configured.  
+``` 
 
 ## Lab steps
 
-<https://github.com/shoegazerpt/MCW-Serverless-architecture/blob/btf2020/Hands-on%20lab/HOL%20step-by-step%20-%20Serverless%20architecture.md>
+<https://github.com/shoegazerpt/MCW-Serverless-architecture/tree/btf2020/Hands-on%20lab>
 
 # Recommended next steps
 
-[Microsoft Cloud Workshop - Serverless Architecture](https://github.com/microsoft/MCW-Serverless-architecture)
+[Microsoft Cloud Workshop - Continuous delivery in Azure DevOps](https://github.com/microsoft/MCW-Continuous-delivery-in-Azure-DevOps)
 
 # Recommended docs
