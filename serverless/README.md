@@ -18,8 +18,6 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 * SME 1 (role, company)
 * SME 2 (role, company)
 
-# Description
-
 # Tasks
 
 ## Access the lab environment
