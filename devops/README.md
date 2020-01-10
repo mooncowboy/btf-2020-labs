@@ -36,6 +36,8 @@ In your cloud shell, run the following:
 curl -s https://raw.githubusercontent.com/shoegazerpt/MCW-Continuous-delivery-in-Azure-DevOps/btf2020/Hands-on%20lab/deploy/deploy.sh | bash -s
 ``` 
 
+It takes about 8 minutes to get the resources fully configured.
+
 ## Lab steps
 
 <https://github.com/shoegazerpt/MCW-Continuous-delivery-in-Azure-DevOps/blob/btf2020/Hands-on%20lab/HOL%20step-by-step%20-%20Continuous%20delivery%20in%20Azure%20DevOps.md>
