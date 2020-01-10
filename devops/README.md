@@ -40,7 +40,7 @@ curl -s https://raw.githubusercontent.com/shoegazerpt/MCW-Continuous-delivery-in
 
 ## Lab steps
 
-<https://github.com/shoegazerpt/MCW-Serverless-architecture/tree/btf2020/Hands-on%20lab>
+<https://github.com/shoegazerpt/MCW-Continuous-delivery-in-Azure-DevOps/blob/btf2020/Hands-on%20lab/HOL%20step-by-step%20-%20Continuous%20delivery%20in%20Azure%20DevOps.md>
 
 # Recommended next steps
 
