@@ -19,3 +19,5 @@ az aks create --resource-group $rgName \
     --load-balancer-sku basic \
     --service-principal $appId \
     --client-secret $appSecret
+
+az aks get-credentials -n $clusterName -g $rgName

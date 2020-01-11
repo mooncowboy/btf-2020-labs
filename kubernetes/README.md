@@ -47,6 +47,9 @@ To provision the AKS cluster, run the following:
 ```
 curl -s  https://raw.githubusercontent.com/shoegazerpt/btf-2020-labs/master/kubernetes/deploy.sh | bash -s $appId $appSecret
 ```
+
+It may take up to 15 minutes to get the resources deployed and publicly available.
+
 ## Overview
 
 You will be deploying a customer-facing order placement and fulfillment application that is containerized and is architected for a microservice implementation.
