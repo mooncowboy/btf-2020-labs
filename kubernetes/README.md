@@ -29,11 +29,53 @@ Follow instructions in [../cloudshell.md](../cloudshell.md) to activate a cloud-
 
 ## Provision requirements
 
-None.
+**In your cloud shell**, copy the Application/Client Id and Application Secret Key provided in your lab guide to environment variables as below:
 
-## Lab steps
+```
+appId=(paste from lab guide)
+appSecret=(paste from lab guide)
+```
 
-Start at [AKS Workshop - Application Overview](https://aksworkshop.io/#appoverview) and complete as many tasks as possible from "Getting Started".
+Verify values are correct by typing:
+
+```
+echo $appId $appSecret
+```
+
+To provision the AKS cluster, run the following:
+
+```
+rgName=${1:-$(az group list --query [0].name -o tsv)}
+
+az aks create --resource-group <resource-group> \
+    --name <unique-aks-cluster-name> \
+    --location <region> \
+    --kubernetes-version $version \
+    --generate-ssh-keys \
+    --vm-set-type VirtualMachineScaleSets \
+    --enable-cluster-autoscaler \
+    --min-count 1 \
+    --max-count 3 \
+    --load-balancer-sku basic \
+    --service-principal <APP_ID> \
+    --client-secret <APP_SECRET> 
+
+```
+## Overview
+
+You will be deploying a customer-facing order placement and fulfillment application that is containerized and is architected for a microservice implementation.
+
+![](2020-01-11-20-12-35.png)
+
+The application consists of 3 components:
+
+* A public facing Order Capture swagger enabled API
+* A public facing frontend
+* A MongoDB database
+
+## Lab Steps
+
+Start at [AKS Workshop - 2.2 Deploy MongoDB](https://aksworkshop.io/#db) and complete as many tasks as possible from "Getting Started".
 
 # Recommended next steps
 
