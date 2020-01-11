@@ -7,7 +7,7 @@
 # Available LABs
 
 * [Continuous Delivery with Azure DevOps](devops/README.md)
-* Kubernetes with AKS
+* [Kubernetes with AKS](kubernetes/README.md)
 * [Serverless Architecture](serverless/README.md)
 * Data Migration
 * Build your first solution on the Microsoft Teams platform
