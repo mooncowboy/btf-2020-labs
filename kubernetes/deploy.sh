@@ -11,7 +11,6 @@ echo "Provisioning AKS cluster $clusterName in $rgLocation with appId=$appId and
 az aks create --resource-group $rgName \
     --name btf2020-$rgName \
     --location $rgLocation \
-    --kubernetes-version $version \
     --generate-ssh-keys \
     --vm-set-type VirtualMachineScaleSets \
     --enable-cluster-autoscaler \

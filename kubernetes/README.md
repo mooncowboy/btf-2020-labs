@@ -45,21 +45,7 @@ echo $appId $appSecret
 To provision the AKS cluster, run the following:
 
 ```
-rgName=${1:-$(az group list --query [0].name -o tsv)}
-
-az aks create --resource-group <resource-group> \
-    --name <unique-aks-cluster-name> \
-    --location <region> \
-    --kubernetes-version $version \
-    --generate-ssh-keys \
-    --vm-set-type VirtualMachineScaleSets \
-    --enable-cluster-autoscaler \
-    --min-count 1 \
-    --max-count 3 \
-    --load-balancer-sku basic \
-    --service-principal <APP_ID> \
-    --client-secret <APP_SECRET> 
-
+curl -s  https://raw.githubusercontent.com/shoegazerpt/btf-2020-labs/master/kubernetes/deploy.sh | bash -s $appId $appSecret
 ```
 ## Overview
 
