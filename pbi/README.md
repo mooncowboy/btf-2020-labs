@@ -26,7 +26,7 @@ Access [this link](https://account.microsoft.com/account) to sign-in to your exi
 
 ## Access the lab environment
 
-Access the lab [here](https://www.microsoft.com/handsonlabs/selfpacedlabs/details/SQ00150)
+Please use InPrivate Browsing to access the lab [here](https://www.microsoft.com/handsonlabs/selfpacedlabs/details/SQ00150)
 
 ## Lab steps
 
