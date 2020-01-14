@@ -1,6 +1,6 @@
 # Analytics with Power BI
 
-Guided experience through Hands-on Lab [Creating and Exploring a Microsoft Power BI Dashboard](https://www.microsoft.com/handsonlabs/selfpacedlabs/details/SQ00150)
+Guided experience to [Creating and Exploring a Microsoft Power BI Dashboard](https://www.microsoft.com/handsonlabs/selfpacedlabs/details/SQ00150)
 
 Browse all Microsoft Hands-on Labs at <https://aka.ms/handsonlabs>
 
@@ -20,17 +20,25 @@ Browse all Microsoft Hands-on Labs at <https://aka.ms/handsonlabs>
 
 # Tasks
 
+**IMPORTANT: Please use InPrivate Browsing to access the lab**
+
 ## Create or Sign-in with a Microsoft account
 
 Access [this link](https://account.microsoft.com/account) to sign-in to your existing Microsoft Account or create a new one.
 
 ## Access the lab environment
 
-Please use InPrivate Browsing to access the lab [here](https://www.microsoft.com/handsonlabs/selfpacedlabs/details/SQ00150)
+Your proctor will provide you a Training Key.
+
+* Navigate to https://ms-handsonlabs.learnondemand.net.
+
+* Sign in with a Microsoft Account (Live ID).  
+
+* Click Redeem Training Key at the top of the page, and follow the prompts which will give you access to course materials.
 
 ## Lab steps
 
-<https://github.com/shoegazerpt/MCW-Serverless-architecture/blob/btf2020/Hands-on%20lab/HOL%20step-by-step%20-%20Serverless%20architecture.md>
+Follow the steps in the first lab: **Creating and Exploring a Microsoft Power BI Dashboard** 
 
 # Recommended next steps
 
