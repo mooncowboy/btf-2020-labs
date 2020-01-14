@@ -20,7 +20,7 @@
 
 * 2m intros
 * 10m topic overview session (MVP)
-* 3m CloudLabs guidance
+* 3m Lab platform guidance
 * 60m LAB
 
 # LICENSE
