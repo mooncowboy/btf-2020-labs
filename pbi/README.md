@@ -15,7 +15,7 @@ Browse all Microsoft Hands-on Labs at <https://aka.ms/handsonlabs>
 # Building the Future 2020 LAB proctors
 
 * [Sara Canteiro](https://https://www.linkedin.com/in/saracanteiro/) (Partner Technology Strategist, Microsoft)
-* [Miguel Rijo](https://www.linkedin.com/in/miguelmendesrijo/) (Sales Advisor, Microsoft)
+* SME 1 (role, company)
 * SME 2 (role, company)
 
 # Tasks
