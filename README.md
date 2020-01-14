@@ -13,7 +13,7 @@
 * [Build your first solution on the Microsoft Teams platform](teams/README.md)
 * Real-time advanced analytics
 * Big Data Clusters
-* TBD
+* [Analytics with Power BI](pbi/README.md)
 
 
 # LAB Structure
