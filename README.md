@@ -10,7 +10,7 @@
 * [Kubernetes with AKS](kubernetes/README.md)
 * [Serverless Architecture](serverless/README.md)
 * Data Migration
-* Build your first solution on the Microsoft Teams platform
+* [Build your first solution on the Microsoft Teams platform](teams/README.md)
 * Real-time advanced analytics
 * Big Data Clusters
 * TBD
