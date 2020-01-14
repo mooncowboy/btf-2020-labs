@@ -14,8 +14,8 @@ Browse all Microsoft labs at <https://www.microsoft.com/handsonlabs/>
 # Building the Future 2020 LAB proctors
 
 * [Luis João](https://github.com/luisjoao) (Modern Workplace and Enterprise Security Specialist, Microsoft)
-* SME 1 (role, company)
-* SME 2 (role, company)
+* João Ferreira, MVP
+* Nuno Árias da Silva, MVP
 
 # Tasks
 
