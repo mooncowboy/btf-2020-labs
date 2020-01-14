@@ -1,4 +1,4 @@
-# Power BI
+# Analytics with Power BI
 
 Guided experience through Hands-on Lab [Creating and Exploring a Microsoft Power BI Dashboard](https://www.microsoft.com/handsonlabs/selfpacedlabs/details/SQ00150)
 
