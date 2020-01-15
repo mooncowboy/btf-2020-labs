@@ -14,7 +14,7 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 
 # Building the Future 2020 LAB proctors
 
-* [Francisco Teixeira](https://github.com/fratei) (Senior Cloud Solution Architect, Microsoft)
+* [Francisco Teixeira](https://www.linkedin.com/in/franciscoteixeira/) - [GitHub](https://github.com/fratei) (Senior Cloud Solution Architect, Microsoft)
 * SME 1 (role, company)
 * SME 2 (role, company)
 
