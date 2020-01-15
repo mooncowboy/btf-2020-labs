@@ -24,25 +24,11 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 
 ## Access the lab environment
 
-Your proctors should present you a link to the environment.
-
-## Access your cloud shell
-
-Follow instructions in [../cloudshell.md](../cloudshell.md) to activate a cloud-based bash shell.
-
-## Provision requirements
-
-In your cloud shell, run the following:
-
-```
-curl -s https://raw.githubusercontent.com/shoegazerpt/MCW-Serverless-architecture/btf2020/Hands-on%20lab/deploy/deploy.sh | bash -s
-```
-
-It takes about 12 minutes to get the resources fully configured.  
+Your proctors should present you a link and activation code to the environment.
 
 ## Lab steps
 
-<https://github.com/shoegazerpt/MCW-Serverless-architecture/blob/btf2020/Hands-on%20lab/HOL%20step-by-step%20-%20Serverless%20architecture.md>
+<https://github.com/fratei/sqlworkshops/blob/btf2020labs/SQLGroundToCloud/sqlgroundtocloud/04-SQLServerOnTheMicrosoftAzurePlatform.md>
 
 # Recommended next steps
 
