@@ -11,8 +11,8 @@
 * [Serverless Architecture](serverless/README.md)
 * [Data Migration](datamigration/README.md)
 * [Build your first solution on the Microsoft Teams platform](teams/README.md)
-* Real-time advanced analytics
-* Big Data Clusters
+* [Real-time advanced analytics](realtimeanalytics/README.md)
+* [Big Data Clusters](sqlserverbdc/README.md)
 * [Analytics with Power BI](pbi/README.md)
 
 
