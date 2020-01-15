@@ -20,15 +20,13 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 
 # Tasks
 
-## TODO
-
 ## Access the lab environment
 
-Your proctors should present you a link to the environment.
+Your proctors should present you a link and activation code to the environment.
 
 ## Lab steps
 
-<https://github.com/shoegazerpt/MCW-Serverless-architecture/blob/btf2020/Hands-on%20lab/HOL%20step-by-step%20-%20Serverless%20architecture.md>
+<https://github.com/fratei/sqlworkshops/blob/btf2020labs/SQLGroundToCloud/sqlgroundtocloud/03-WorkingWithBigDataAndDataScienceBigDataClustersForSQLServer2019.md>
 
 # Recommended next steps
 
