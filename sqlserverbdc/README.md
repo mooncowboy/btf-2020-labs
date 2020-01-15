@@ -7,7 +7,6 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 # TOC
 
 * [Building the Future 2020 LAB proctors](#building-the-future-2020-lab-proctors)
-* [Description](#description)
 * [Tasks](#tasks)
 * [Recommended next steps](#recommended-next-steps)
 * [Recommended docs](#recommended-docs)
