@@ -14,9 +14,9 @@ Browse all Microsoft Hands-on Labs at <https://aka.ms/handsonlabs>
 
 # Building the Future 2020 LAB proctors
 
-* [Sara Canteiro](https://https://www.linkedin.com/in/saracanteiro/) (Partner Technology Strategist, Microsoft)
-* SME 1 (role, company)
-* SME 2 (role, company)
+* [Sara Canteiro](https://www.linkedin.com/in/saracanteiro/) (Partner Technology Strategist, Microsoft)
+* [César Almeida](https://www.linkedin.com/in/ceseida/) (Power BI Premier Support Engineer, Microsoft)
+* [Rui Romano](https://www.linkedin.com/in/ruiromano) (Head of BI, Devscope)
 
 # Tasks
 
@@ -41,6 +41,8 @@ Your proctor will provide you a Training Key.
 Follow the steps in the first lab: **Creating and Exploring a Microsoft Power BI Dashboard** 
 
 # Recommended next steps
+
+Finish up the remaining labs.
 
 Explore [Power BI](https://powerbi.microsoft.com/) and the full extent of the [Power Platform](https://powerplatform.microsoft.com/)
 
