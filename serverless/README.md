@@ -46,4 +46,3 @@ It takes about 12 minutes to get the resources fully configured.
 
 [Microsoft Cloud Workshop - Serverless Architecture](https://github.com/microsoft/MCW-Serverless-architecture)
 
-# Recommended docs
