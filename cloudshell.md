@@ -10,10 +10,10 @@ Azure Cloud Shell is an interactive, authenticated, browser-accessible shell for
 
 1. Click **Bash**
 
-![](media/2019-12-31-14-41-09.png)
+![](media/2019-12-31-14-41-09-1.png)
 
 2. Click **Show Advanced Settings**
-![](media/2019-12-31-14-41-38.png)
+![](media/2019-12-31-14-41-38-1.png)
 
 3. Storage and File Share name
 
@@ -23,7 +23,7 @@ Example (**replace with your own**):
 * Storage account: kjfjwhcnkd
 * File Share: kjfjwhcnkdfiles
 
-![](media/2019-12-31-14-42-15.png)
+![](media/2019-12-31-14-42-15-1.png)
 
 4. Click **Create storage**
 
