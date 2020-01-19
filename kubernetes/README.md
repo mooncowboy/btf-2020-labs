@@ -9,7 +9,6 @@ Selected tasks from [The Azure Kubernetes Workshop](https://aksworkshop.io/)
 * [Description](#description)
 * [Tasks](#tasks)
 * [Recommended next steps](#recommended-next-steps)
-* [Recommended docs](#recommended-docs)
 
 # Building the Future 2020 LAB proctors
 
@@ -48,6 +47,8 @@ To provision the AKS cluster, run the following:
 curl -s  https://raw.githubusercontent.com/shoegazerpt/btf-2020-labs/master/kubernetes/deploy.sh | bash -s $appId $appSecret
 ```
 
+**NOTE:** This deploys to the first resource group in your subscription. To specify another resource group and location, pass it as parameters to command above. Eg: `bash -s <resource_group> <location>`
+
 It may take up to 15 minutes to get the resources deployed and publicly available.
 
 ## Overview
@@ -69,5 +70,3 @@ Start at [AKS Workshop - 2.2 Deploy MongoDB](https://aksworkshop.io/#db) and com
 # Recommended next steps
 
 [The Azure Kubernetes Workshop](https://aksworkshop.io/)
-
-# Recommended docs

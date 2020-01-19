@@ -10,7 +10,6 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 * [Description](#description)
 * [Tasks](#tasks)
 * [Recommended next steps](#recommended-next-steps)
-* [Recommended docs](#recommended-docs)
 
 # Building the Future 2020 LAB proctors
 
@@ -35,6 +34,8 @@ In your cloud shell, run the following:
 ```
 curl -s https://raw.githubusercontent.com/shoegazerpt/MCW-Serverless-architecture/btf2020/Hands-on%20lab/deploy/deploy.sh | bash -s
 ```
+
+**NOTE:** This deploys to the first resource group in your subscription. To specify another resource group and location, pass it as parameters to command above. Eg: `bash -s <resource_group> <location>`
 
 It takes about 12 minutes to get the resources fully configured.  
 

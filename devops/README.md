@@ -36,6 +36,8 @@ In your cloud shell, run the following:
 curl -s https://raw.githubusercontent.com/shoegazerpt/MCW-Continuous-delivery-in-Azure-DevOps/btf2020/Hands-on%20lab/deploy/deploy.sh | bash -s
 ``` 
 
+**NOTE:** This deploys to the first resource group in your subscription. To specify another resource group and location, pass it as parameters to command above. Eg: `bash -s <resource_group> <location>`
+
 It takes about 8 minutes to get the resources fully configured.
 
 ## Lab steps
@@ -45,5 +47,3 @@ It takes about 8 minutes to get the resources fully configured.
 # Recommended next steps
 
 [Microsoft Cloud Workshop - Continuous delivery in Azure DevOps](https://github.com/microsoft/MCW-Continuous-delivery-in-Azure-DevOps)
-
-# Recommended docs
