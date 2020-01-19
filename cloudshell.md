@@ -8,14 +8,14 @@ Azure Cloud Shell is an interactive, authenticated, browser-accessible shell for
 
 ## Activating your Bash cloud shell
 
-1. Click **Bash**
+### 1. Click **Bash**
 
 ![](media/2019-12-31-14-41-09-1.png)
 
-2. Click **Show Advanced Settings**
+### 2. Click **Show Advanced Settings**
 ![](media/2019-12-31-14-41-38-1.png)
 
-3. Storage and File Share name
+### 3. Storage and File Share name
 
 Please provie a **globally unique name** to both the Storage Account and the File Share Name
 
@@ -25,7 +25,7 @@ Example (**replace with your own**):
 
 ![](media/2019-12-31-14-42-15-1.png)
 
-4. Click **Create storage**
+### 4. Click **Create storage**
 
 Your cloud shell will take a moment to become available. You will then be able to run bash, azure cli and kubectl commands, among others.
 
