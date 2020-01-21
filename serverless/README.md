@@ -15,7 +15,7 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 
 * [Ricardo Fiel](https://github.com/shoegazerpt) (Senior Cloud Solution Architect, Microsoft)
 * SME 1 (role, company)
-* SME 2 (role, company)
+* [Tiago Costa](https://www.tiagocosta.com) (Cloud Architect and Advisor, Independent Contractor)
 
 # Tasks
 
