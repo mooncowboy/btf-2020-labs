@@ -37,7 +37,9 @@ curl -s https://raw.githubusercontent.com/shoegazerpt/MCW-Serverless-architectur
 
 **NOTE:** This deploys to the first resource group in your subscription. To specify another resource group and location, pass it as parameters to command above. Eg: `bash -s <resource_group> <location>`
 
-It takes about 12 minutes to get the resources fully configured.  
+It takes about 12 minutes to get the resources fully configured. 
+
+Take this time to continue reading the lab materials and get familiar with it.
 
 ## Lab steps
 

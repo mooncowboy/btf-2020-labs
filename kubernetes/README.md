@@ -51,6 +51,8 @@ curl -s  https://raw.githubusercontent.com/shoegazerpt/btf-2020-labs/master/kube
 
 It may take up to 15 minutes to get the resources deployed and publicly available.
 
+Take this time to continue reading the lab materials and get familiar with it.
+
 ## Overview
 
 You will be deploying a customer-facing order placement and fulfillment application that is containerized and is architected for a microservice implementation.
