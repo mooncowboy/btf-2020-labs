@@ -15,7 +15,7 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 
 * [Francisco Teixeira](https://www.linkedin.com/in/franciscoteixeira/) - [GitHub](https://github.com/fratei) (Senior Cloud Solution Architect, Microsoft)
 * SME 1 (role, company)
-* SME 2 (role, company)
+* [Ivan Campos](https://www.linkedin.com/in/idcampos/) (Data Platform Manager, 3C TechLab | 3C Payment)
 
 # Tasks
 
