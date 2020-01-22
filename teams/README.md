@@ -14,7 +14,7 @@ Browse all Microsoft labs at <https://www.microsoft.com/handsonlabs/>
 # Building the Future 2020 LAB proctors
 
 * [Luis João](https://github.com/luisjoao) (Modern Workplace and Enterprise Security Specialist, Microsoft)
-* João Ferreira, MVP
+* [João Ferreira](https://handsontek.net/), MVP and Technical Lead at Beezy
 * [Nuno Árias da Silva](https://www.nuno-silva.net/), MVP and Architect Manager at GFI
 
 # Tasks
