@@ -13,7 +13,7 @@ Selected tasks from [The Azure Kubernetes Workshop](https://aksworkshop.io/)
 # Building the Future 2020 LAB proctors
 
 * [Ricardo Fiel](https://github.com/shoegazerpt) (Senior Cloud Solution Architect, Microsoft)
-* SME 1 (role, company)
+* [Henrique Graca](https://github.com/hjgraca) (Azure FastTrack Engineer, Microsoft)
 * SME 2 (role, company)
 
 # Tasks
