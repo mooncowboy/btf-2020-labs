@@ -15,7 +15,7 @@ Browse all Microsoft labs at <https://www.microsoft.com/handsonlabs/>
 
 * [Luis João](https://github.com/luisjoao) (Modern Workplace and Enterprise Security Specialist, Microsoft)
 * João Ferreira, MVP
-* Nuno Árias da Silva, MVP
+* [Nuno Árias da Silva](https://www.nuno-silva.net/), MVP and Architect Manager at GFI
 
 # Tasks
 
