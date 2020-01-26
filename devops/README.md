@@ -15,8 +15,8 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 # Building the Future 2020 LAB proctors
 
 * [Ricardo Fiel](https://github.com/shoegazerpt) (Senior Cloud Solution Architect, Microsoft)
-* SME 1 (role, company)
-* SME 2 (role, company)
+* [Eduardo Matos](https://www.linkedin.com/in/eduardomatos/) (Service Delivery Manager, Microsoft)
+* [Virgilio Esteves](https://www.linkedin.com/in/virgilioesteves/) (Microsoft Azure MVP and Architect at Sevenworld Technologies)
 
 # Tasks
 

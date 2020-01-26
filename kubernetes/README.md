@@ -14,7 +14,7 @@ Selected tasks from [The Azure Kubernetes Workshop](https://aksworkshop.io/)
 
 * [Ricardo Fiel](https://github.com/shoegazerpt) (Senior Cloud Solution Architect, Microsoft)
 * [Henrique Graca](https://github.com/hjgraca) (Azure FastTrack Engineer, Microsoft)
-* SME 2 (role, company)
+* [Virgilio Esteves](https://www.linkedin.com/in/virgilioesteves/) (Microsoft Azure MVP and Architect at Sevenworld Technologies)
 
 # Tasks
 
