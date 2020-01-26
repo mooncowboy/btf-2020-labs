@@ -14,7 +14,7 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 # Building the Future 2020 LAB proctors
 
 * [Ricardo Fiel](https://github.com/shoegazerpt) (Senior Cloud Solution Architect, Microsoft)
-* SME 1 (role, company)
+* Alexandre Vieira (Senior Cloud Solution Architect, Microsoft)
 * [Tiago Costa](https://github.com/tiagocostapt) (Cloud Architect and Advisor, Independent Contractor)
 
 # Tasks
