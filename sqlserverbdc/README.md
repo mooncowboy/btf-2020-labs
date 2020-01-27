@@ -14,8 +14,8 @@ Browse all Microsoft Cloud Workshops at <https://github.com/Microsoft/MCW>
 # Building the Future 2020 LAB proctors
 
 * [Francisco Teixeira](https://www.linkedin.com/in/franciscoteixeira/) - [GitHub](https://github.com/fratei) (Senior Cloud Solution Architect, Microsoft)
-* SME 1 (role, company)
-* SME 2 (role, company)
+* [Nuno Nunes](https://www.linkedin.com/in/nunomiguelnunes/) (Senior Cloud Solution Architect, Microsoft)
+* [Viviane Ribeiro](https://www.linkedin.com/in/viviane-ribeiro-sql/) - (Microsoft Regional Director | MVP | Data & AI Solution Architect Lead at BI do Brasil)
 
 # Tasks
 
