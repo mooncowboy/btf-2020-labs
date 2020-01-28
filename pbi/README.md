@@ -28,7 +28,7 @@ Access [this link](https://account.microsoft.com/account) to sign-in to your exi
 
 ## Access the lab environment
 
-Your Training Key is E3670A93.
+Your Training Key is **E3670A93**.
 
 * Navigate to https://ms-handsonlabs.learnondemand.net.
 
